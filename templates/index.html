@@ -1,0 +1,31 @@
+{% extends "bootstrap/base.html" %}
+{% block title %}广告推荐Demo{% endblock %}
+{% block styles %}
+     <style type="text/css">
+        .goodsTable{
+            margin-top: 1%;
+            margin-left: 35%;
+            width: 30% !important;
+        }
+    </style>
+    {{ super() }}
+{% endblock %}
+{% block head %}
+    {{ super() }}
+
+    <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+{% endblock %}
+{% block content %}
+    <h1 class="text-center" style="margin-top: 3%">广告推荐Demo</h1>
+    <h2 class="text-center" style="margin-top: 5%">输入用户ID，返回推荐商品分类</h2>
+    <form method="get">
+        <input style="float:left;margin-left: 34%;margin-top: 2%;width:31%"
+               type="text" class="form-control" name="user_id" placeholder="输入用户ID">
+        <button style="margin-top: 2%;margin-left: 1%; margin-bottom: 1%" type="submit"
+                class="btn btn-default">确定</button>
+    </form>
+    <h3 class="text-center">用户ID： {{ userId }}</h3>
+    {{ table }}
+
+{% endblock %}
